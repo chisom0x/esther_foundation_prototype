@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="The Esther Idisi Foundation provides free medical care and community support in Nigeria."
+      content="The Esther Idisi Foundation provides a yearly basic medical outreach and community support in Nigeria."
     />
     <title>Esther Idisi Foundation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -36,7 +36,6 @@
           <li><a href="#about">About</a></li>
           <li><a href="#work">Our Work</a></li>
           <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#clinic">Clinic</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a class="nav-donate" href="#donate">Donate</a></li>
         </ul>
@@ -48,34 +47,36 @@
         <div class="hero-content">
           <p class="section-kicker hero-kicker">Community care in Nigeria</p>
           <h1 id="hero-title">
-            Serving With <span class="accent-underline">Love</span>, Honouring
-            a Legacy
+            Serving With <span class="accent-underline">Love</span>, Honouring a
+            Legacy
           </h1>
           <p class="hero-text">
-            The Esther Idisi Foundation provides free medical care and community
-            support in the heart of our city.
+            The Esther Idisi Foundation provides a yearly basic medical
+            outreach and community support in Nigeria.
           </p>
           <div class="hero-actions" aria-label="Primary actions">
-            <a class="button button-primary" href="#clinic">Visit Our Clinic</a>
             <a class="button button-outline" href="#about">Learn More</a>
           </div>
         </div>
       </section>
 
-      <section class="section about-section" id="about" aria-labelledby="about-title">
+      <section
+        class="section about-section"
+        id="about"
+        aria-labelledby="about-title"
+      >
         <div class="section-inner about-grid">
           <div class="about-copy reveal">
             <p class="section-kicker">About the foundation</p>
             <h2 id="about-title">Who Was Esther Idisi?</h2>
             <p>
               Esther Idisi dedicated her life to practical compassion. She
-              advocated for abused women, supported orphanages, prepared meals
-              for a leper colony, and cared for street beggars with dignity and
-              tenderness.
+              advocated for abused women, supported orphanages, prepared meals,
+              and cared for the less privileged with dignity and tenderness.
             </p>
             <p>
               The foundation established in her honour continues that same work
-              through community support and a free medical clinic open to
+              through community support and a yearly basic medical outreach for
               families who need care most.
             </p>
             <blockquote>
@@ -84,7 +85,7 @@
           </div>
           <figure class="about-image reveal">
             <img
-              src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=800&auto=format&fit=crop&q=80"
+              src="https://res.cloudinary.com/dmddjqgfd/image/upload/v1783282853/WhatsApp_Image_2026-07-02_at_9.19.28_PM_fcssoq.jpg"
               alt="A dignified portrait representing Esther Idisi's legacy of care"
             />
           </figure>
@@ -92,70 +93,121 @@
       </section>
 
       <section class="stats-section" aria-label="Foundation impact statistics">
-        <div class="stats-grid reveal">
-          <article class="stat-item">
-            <strong class="stat-number" data-target="500" data-suffix="+">0</strong>
-            <span>Women Supported</span>
-          </article>
-          <article class="stat-item">
-            <strong class="stat-number" data-target="12" data-suffix="+">0</strong>
+        <div
+          class="stats-grid reveal"
+          style="
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+          "
+        >
+          <article class="stat-item" style="text-align: center">
+            <strong class="stat-number" data-target="1" data-suffix="+"
+              >0</strong
+            >
             <span>Years of Service</span>
           </article>
           <article class="stat-item">
-            <strong class="stat-number" data-target="1200" data-suffix="+">0</strong>
-            <span>Clinic Patients Served</span>
+            <strong class="stat-number" data-target="200" data-suffix="+"
+              >0</strong
+            >
+            <span>People Served</span>
           </article>
           <article class="stat-item">
-            <strong class="stat-number" data-target="3">0</strong>
-            <span>Community Programmes</span>
+            <strong class="stat-number" data-target="1">0</strong>
+            <span>Annual Outreach Programme</span>
           </article>
         </div>
       </section>
 
-      <section class="section work-section" id="work" aria-labelledby="work-title">
+      <section
+        class="section work-section"
+        id="work"
+        aria-labelledby="work-title"
+      >
         <div class="section-inner">
           <div class="section-heading reveal">
             <p class="section-kicker">Our work</p>
             <h2 id="work-title">What We Do</h2>
+            <p class="section-lede">
+              A yearly outreach offering practical basic health support,
+              wellness supplies, and eye care for families in the community.
+            </p>
           </div>
-          <div class="work-grid">
-            <article class="work-card reveal">
-              <h3>Free Medical Clinic</h3>
-              <p>
-                Open weekly, providing consultations, basic medication, and
-                referrals at no cost. The clinic exists so neighbours can seek
-                care before small concerns become emergencies.
-              </p>
+          <div class="work-layout">
+            <article class="work-feature reveal">
+              <div class="work-feature-copy">
+                <p class="work-eyebrow">Free medical outreach</p>
+                <h3>Free Basic Medical Outreach</h3>
+                <p>
+                  For now, the foundation hosts an annual basic medical
+                  outreach where community members can receive simple health
+                  checks, wellness support, vitamins, supplements, and eye care
+                  at no cost.
+                </p>
+                <ul class="work-highlights">
+                  <li>Supplements and vitamins</li>
+                  <li>Free medicated glasses</li>
+                  <li>Eye checkups and basic vision support</li>
+                  <li>Blood pressure checks</li>
+                  <li>Care offered with dignity and warmth</li>
+                </ul>
+                <a class="button button-primary" href="#outreach">
+                  See Outreach Details
+                </a>
+              </div>
+              <figure class="work-feature-media">
+                <img
+                  src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=900&auto=format&fit=crop&q=80"
+                  alt="A medical worker checking a patient's blood pressure during a medical outreach"
+                />
+                <figcaption>
+                  <span>Yearly outreach</span>
+                  <strong>Basic health support made easier to reach</strong>
+                </figcaption>
+              </figure>
             </article>
-            <article class="work-card reveal">
-              <h3>Women's Advocacy</h3>
-              <p>
-                Supporting survivors of abuse with counselling, resources, and
-                community networks. We help women find safety, confidence, and
-                trusted people to walk beside them.
-              </p>
-            </article>
-            <article class="work-card reveal">
-              <h3>Feeding Programmes</h3>
-              <p>
-                Regular meal distribution to the leper colony and street
-                beggars in our community. Every meal is offered with warmth,
-                patience, and respect.
-              </p>
-            </article>
-            <article class="work-card reveal">
-              <h3>Orphanage Support</h3>
-              <p>
-                Providing supplies, visits, and care packages to local
-                orphanages throughout the year. Our team works to make children
-                feel remembered, protected, and loved.
-              </p>
-            </article>
+            <div
+              class="work-card-grid"
+              aria-label="How the outreach supports families"
+            >
+              <article class="work-card reveal">
+                <span class="work-card-marker" aria-hidden="true">01</span>
+                <h3>Wellness Support</h3>
+                <p>
+                  Families receive vitamins, supplements, and basic health
+                  guidance to support everyday wellbeing.
+                </p>
+              </article>
+              <article class="work-card reveal">
+                <span class="work-card-marker" aria-hidden="true">02</span>
+                <h3>Eye Care</h3>
+                <p>
+                  Eye checkups and free medicated glasses help community
+                  members see more clearly without the barrier of cost.
+                </p>
+              </article>
+              <article class="work-card reveal">
+                <span class="work-card-marker" aria-hidden="true">03</span>
+                <h3>Basic Checks</h3>
+                <p>
+                  Blood pressure checks and simple screenings help people better
+                  understand their health and seek care when needed.
+                </p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section gallery-section" id="gallery" aria-labelledby="gallery-title">
+      <section
+        class="section gallery-section"
+        id="gallery"
+        aria-labelledby="gallery-title"
+      >
         <div class="section-inner">
           <div class="section-heading reveal">
             <p class="section-kicker">Gallery</p>
@@ -165,142 +217,180 @@
             <button
               class="gallery-item reveal"
               type="button"
-              data-caption="Free Clinic Day - March 2024"
+              data-caption="Annual Medical Outreach"
             >
               <img
-                src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=600&auto=format&fit=crop&q=80"
-                alt="A medical worker checking a patient's blood pressure"
+                src="https://res.cloudinary.com/dmddjqgfd/image/upload/v1783284087/WhatsApp_Image_2026-06-23_at_9.27.53_AM_iayitu.jpg"
+                alt="Photo from the Esther Idisi Foundation annual medical outreach"
               />
-              <span>Free Clinic Day - March 2024</span>
+              <span>Annual Medical Outreach</span>
             </button>
             <button
               class="gallery-item reveal"
               type="button"
-              data-caption="Community Health Screening - April 2024"
+              data-caption="Community Health Checks"
             >
               <img
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&auto=format&fit=crop&q=80"
-                alt="Healthcare workers reviewing medical notes"
+                src="https://res.cloudinary.com/dmddjqgfd/image/upload/v1783284085/WhatsApp_Image_2026-06-23_at_9.27.52_AM_4_ncgsxy.jpg"
+                alt="Community members receiving support during the foundation outreach"
               />
-              <span>Community Health Screening - April 2024</span>
+              <span>Community Health Checks</span>
             </button>
             <button
               class="gallery-item reveal"
               type="button"
-              data-caption="Women Support Circle - May 2024"
+              data-caption="Eye Care Support"
             >
               <img
-                src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop&q=80"
-                alt="Women holding hands in support"
+                src="https://res.cloudinary.com/dmddjqgfd/image/upload/v1783284084/WhatsApp_Image_2026-06-23_at_9.27.51_AM_qszydy.jpg"
+                alt="Outreach moment from the foundation's basic medical support programme"
               />
-              <span>Women Support Circle - May 2024</span>
+              <span>Eye Care Support</span>
             </button>
             <button
               class="gallery-item reveal"
               type="button"
-              data-caption="Food Outreach Visit - June 2024"
+              data-caption="Supplements and Vitamins"
             >
               <img
-                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&auto=format&fit=crop&q=80"
-                alt="Volunteers serving food during community outreach"
+                src="https://res.cloudinary.com/dmddjqgfd/image/upload/v1783284082/WhatsApp_Image_2026-06-23_at_9.27.50_AM_1_wcwsmh.jpg"
+                alt="Foundation outreach supplies for community medical support"
               />
-              <span>Food Outreach Visit - June 2024</span>
+              <span>Supplements and Vitamins</span>
             </button>
             <button
               class="gallery-item reveal"
               type="button"
-              data-caption="Orphanage Care Packages - July 2024"
+              data-caption="Free Medicated Glasses"
             >
               <img
-                src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600&auto=format&fit=crop&q=80"
-                alt="A child smiling during a community visit"
+                src="https://res.cloudinary.com/dmddjqgfd/image/upload/v1783284087/WhatsApp_Image_2026-06-23_at_9.27.53_AM_5_b0guew.jpg"
+                alt="Community outreach moment connected to free medicated glasses support"
               />
-              <span>Orphanage Care Packages - July 2024</span>
+              <span>Free Medicated Glasses</span>
             </button>
             <button
               class="gallery-item reveal"
               type="button"
-              data-caption="Medication Support Table - August 2024"
+              data-caption="Outreach Care Moment"
             >
               <img
-                src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&auto=format&fit=crop&q=80"
-                alt="Medical supplies arranged for patients"
+                src="https://res.cloudinary.com/dmddjqgfd/image/upload/v1783284084/WhatsApp_Image_2026-06-23_at_9.27.52_AM_2_bh2ibw.jpg"
+                alt="Care moment from the Esther Idisi Foundation outreach"
               />
-              <span>Medication Support Table - August 2024</span>
+              <span>Outreach Care Moment</span>
             </button>
             <button
               class="gallery-item reveal"
               type="button"
-              data-caption="Volunteer Training - September 2024"
+              data-caption="Foundation Outreach Team"
             >
               <img
-                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=600&auto=format&fit=crop&q=80"
-                alt="A group of volunteers gathered around a table"
+                src="https://res.cloudinary.com/dmddjqgfd/image/upload/v1783284082/WhatsApp_Image_2026-06-23_at_9.27.50_AM_t4pnca.jpg"
+                alt="The Esther Idisi Foundation team during a community outreach"
               />
-              <span>Volunteer Training - September 2024</span>
+              <span>Foundation Outreach Team</span>
             </button>
             <button
               class="gallery-item reveal"
               type="button"
-              data-caption="Community Visit - October 2024"
+              data-caption="Outreach Service Moment"
             >
               <img
-                src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=600&auto=format&fit=crop&q=80"
-                alt="Community members standing together outdoors"
+                src="https://res.cloudinary.com/dmddjqgfd/image/upload/v1783284085/WhatsApp_Image_2026-06-23_at_9.27.52_AM_3_jerznb.jpg"
+                alt="Service moment from the Esther Idisi Foundation outreach"
               />
-              <span>Community Visit - October 2024</span>
-            </button>
-            <button
-              class="gallery-item reveal"
-              type="button"
-              data-caption="Clinic Team Prayer - November 2024"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&auto=format&fit=crop&q=80"
-                alt="Volunteers placing hands together in encouragement"
-              />
-              <span>Clinic Team Prayer - November 2024</span>
+              <span>Outreach Service Moment</span>
             </button>
           </div>
         </div>
       </section>
 
-      <section class="section clinic-section" id="clinic" aria-labelledby="clinic-title">
+      <section
+        class="section clinic-section"
+        id="outreach"
+        aria-labelledby="outreach-title"
+      >
         <div class="section-inner clinic-grid">
           <div class="clinic-copy reveal">
-            <p class="section-kicker">Free clinic</p>
-            <h2 id="clinic-title">Our Free Medical Clinic</h2>
+            <p class="section-kicker">Annual outreach</p>
+            <h2 id="outreach-title">Our Yearly Basic Medical Outreach</h2>
             <p>
-              The clinic is the foundation's primary ongoing service, offering
-              essential health support to community members who may otherwise
-              delay treatment because of cost.
+              The outreach is the foundation's current medical programme,
+              created to bring basic checks, eye care, vitamins, supplements,
+              and free medicated glasses to community members at no cost.
             </p>
             <dl class="clinic-details">
               <div>
-                <dt>Clinic Day</dt>
-                <dd>Every Saturday, 9:00am - 2:00pm</dd>
+                <dt>Schedule</dt>
+                <dd>Held yearly, with dates announced ahead of each outreach</dd>
               </div>
               <div>
                 <dt>Location</dt>
-                <dd>No. 14 Health Mission Road, Delta State, Nigeria</dd>
+                <dd>Shared with the community before each outreach day</dd>
               </div>
             </dl>
-            <a class="button button-primary" href="#">Get Directions</a>
+            <a class="button button-primary" href="#contact">
+              Contact for Updates
+            </a>
           </div>
           <aside class="services-card reveal" aria-labelledby="services-title">
-            <h3 id="services-title">Clinic Services</h3>
+            <h3 id="services-title">Outreach Services</h3>
             <ul>
-              <li>General Consultations</li>
-              <li>Blood Pressure &amp; Diabetes Screening</li>
-              <li>Wound Care</li>
-              <li>Medication Dispensing</li>
-              <li>Referral Letters</li>
+              <li>Eye Checkups</li>
+              <li>Free Medicated Glasses</li>
+              <li>Blood Pressure Checks</li>
+              <li>Supplements</li>
+              <li>Vitamins</li>
             </ul>
           </aside>
         </div>
       </section>
 
-      <section class="section involve-section" id="donate" aria-labelledby="involve-title">
+      <section
+        class="section shirt-section"
+        id="shirt"
+        aria-labelledby="shirt-title"
+      >
+        <div class="section-inner shirt-grid">
+          <figure class="shirt-media reveal">
+            <img
+              src="https://res.cloudinary.com/dmddjqgfd/image/upload/v1783287059/Gemini_Generated_Image_hbpcv2hbpcv2hbpc-removebg-preview_qdtdzy.png"
+              alt="Esther Idisi Foundation support shirt"
+            />
+          </figure>
+          <div class="shirt-copy reveal">
+            <p class="section-kicker">Support the foundation</p>
+            <h2 id="shirt-title">Buy the Foundation Shirt</h2>
+            <p>
+              Wear the mission and help fund practical community care. Proceeds
+              support the foundation's yearly basic medical outreach and ongoing
+              acts of compassion.
+            </p>
+            <div class="shirt-purchase">
+              <div class="shirt-price" aria-label="Shirt price">
+                <span>Price</span>
+                <strong>&#8358;10,000</strong>
+              </div>
+              <a
+                class="button button-primary"
+                href="https://wa.me/2348167075730?text=Hello%2C%20I%20would%20like%20to%20buy%20the%20Esther%20Idisi%20Foundation%20shirt%20for%20N10%2C000."
+                target="_blank"
+                rel="noopener"
+                aria-label="Buy the foundation shirt for 10,000 naira on WhatsApp"
+              >
+                Buy on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section involve-section"
+        id="donate"
+        aria-labelledby="involve-title"
+      >
         <div class="section-inner">
           <div class="section-heading centered reveal">
             <p class="section-kicker">Get involved</p>
@@ -310,7 +400,7 @@
             <article class="involve-card reveal">
               <h3>Volunteer</h3>
               <p>
-                Give your time at clinic days, outreach visits, or support
+                Give your time at outreach days, community visits, or support
                 drives. A steady pair of hands can carry a lot of hope.
               </p>
               <a class="text-button" href="#contact">Become a Volunteer</a>
@@ -318,16 +408,17 @@
             <article class="involve-card reveal">
               <h3>Donate</h3>
               <p>
-                Help us keep medication, meals, and care packages available for
-                neighbours facing difficult seasons.
+                Help us provide supplements, vitamins, eye care, free glasses,
+                meals, and care packages for neighbours facing difficult
+                seasons.
               </p>
               <a class="text-button" href="#contact">Support the Work</a>
             </article>
             <article class="involve-card reveal">
               <h3>Partner With Us</h3>
               <p>
-                Churches, clinics, schools, and businesses can help expand
-                access to care through practical partnership.
+                Churches, health providers, schools, and businesses can help
+                expand access to care through practical partnership.
               </p>
               <a class="text-button" href="#contact">Start a Partnership</a>
             </article>
@@ -335,7 +426,11 @@
         </div>
       </section>
 
-      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <section
+        class="section contact-section"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
         <div class="section-inner contact-grid">
           <div class="contact-info reveal">
             <p class="section-kicker">Contact</p>
@@ -351,7 +446,9 @@
             <div class="social-links" aria-label="Social media links">
               <a href="#" aria-label="Facebook">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v8h4v-8h3l1-4h-4V9c0-1 .4-1 1-1Z" />
+                  <path
+                    d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v8h4v-8h3l1-4h-4V9c0-1 .4-1 1-1Z"
+                  />
                 </svg>
               </a>
               <a href="#" aria-label="Instagram">
@@ -363,29 +460,13 @@
               </a>
               <a href="#" aria-label="Twitter X">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 4h5l4 5 4-5h3l-6 7 7 9h-5l-5-6-5 6H3l7-8L4 4Zm4 2 9 12h2L10 6H8Z" />
+                  <path
+                    d="M4 4h5l4 5 4-5h3l-6 7 7 9h-5l-5-6-5 6H3l7-8L4 4Zm4 2 9 12h2L10 6H8Z"
+                  />
                 </svg>
               </a>
             </div>
           </div>
-          <form class="contact-form reveal" id="contact-form" novalidate>
-            <div class="form-success" id="form-success" role="status" tabindex="-1" hidden>
-              Thank you! We'll be in touch soon.
-            </div>
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required />
-
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
-
-            <label for="subject">Subject</label>
-            <input id="subject" name="subject" type="text" required />
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
-
-            <button class="button button-primary" type="submit">Send Message</button>
-          </form>
         </div>
       </section>
     </main>
@@ -400,27 +481,47 @@
           <a href="#about">About</a>
           <a href="#work">Our Work</a>
           <a href="#gallery">Gallery</a>
-          <a href="#clinic">Clinic</a>
+          <a href="#outreach">Outreach</a>
+          <a href="#shirt">Shirt</a>
           <a href="#contact">Contact</a>
         </nav>
         <p class="copyright">
-          &copy; 2024 Esther Idisi Foundation. All rights reserved.
+          &copy; 2026 Esther Idisi Foundation. All rights reserved.
         </p>
       </div>
     </footer>
 
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption" hidden>
-      <button class="lightbox-close" type="button" aria-label="Close gallery image">
+    <div
+      class="lightbox"
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="lightbox-caption"
+      hidden
+    >
+      <button
+        class="lightbox-close"
+        type="button"
+        aria-label="Close gallery image"
+      >
         &times;
       </button>
-      <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">
+      <button
+        class="lightbox-nav lightbox-prev"
+        type="button"
+        aria-label="Previous image"
+      >
         &#8249;
       </button>
       <figure class="lightbox-content">
         <img src="" alt="" id="lightbox-image" />
         <figcaption id="lightbox-caption"></figcaption>
       </figure>
-      <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">
+      <button
+        class="lightbox-nav lightbox-next"
+        type="button"
+        aria-label="Next image"
+      >
         &#8250;
       </button>
     </div>

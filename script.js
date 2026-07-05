@@ -11,8 +11,6 @@ const lightboxCaption = document.querySelector("#lightbox-caption");
 const closeLightboxButton = document.querySelector(".lightbox-close");
 const previousLightboxButton = document.querySelector(".lightbox-prev");
 const nextLightboxButton = document.querySelector(".lightbox-next");
-const contactForm = document.querySelector("#contact-form");
-const formSuccess = document.querySelector("#form-success");
 
 let activeGalleryIndex = 0;
 let previousFocus = null;
@@ -216,17 +214,4 @@ lightbox.addEventListener("click", (event) => {
   if (event.target === lightbox) {
     closeLightbox();
   }
-});
-
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  if (!contactForm.checkValidity()) {
-    contactForm.reportValidity();
-    return;
-  }
-
-  formSuccess.hidden = false;
-  contactForm.reset();
-  formSuccess.focus();
 });
