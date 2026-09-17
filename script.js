@@ -125,9 +125,78 @@ const openLightbox = (index) => {
   closeLightboxButton.focus();
 };
 
+const downloadImage = async (url, filename, buttonElement) => {
+  const originalContent = buttonElement ? buttonElement.innerHTML : null;
+
+  if (buttonElement) {
+    buttonElement.disabled = true;
+    buttonElement.innerHTML = `
+      <svg class="spin-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"/></svg>
+      <span>Downloading...</span>
+    `;
+  }
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("Download request failed");
+    const blob = await response.blob();
+    const objectUrl = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = objectUrl;
+    link.download = filename || "esther-idisi-foundation-publication.jpg";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
+
+    if (buttonElement) {
+      buttonElement.innerHTML = `
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Downloaded!</span>
+      `;
+      setTimeout(() => {
+        buttonElement.innerHTML = originalContent;
+        buttonElement.disabled = false;
+      }, 2400);
+    }
+  } catch (error) {
+    console.warn("Direct blob download failed, attempting fallback:", error);
+    const fallbackLink = document.createElement("a");
+    fallbackLink.href = url;
+    fallbackLink.target = "_blank";
+    fallbackLink.download = filename || "esther-idisi-foundation-publication.jpg";
+    document.body.appendChild(fallbackLink);
+    fallbackLink.click();
+    document.body.removeChild(fallbackLink);
+
+    if (buttonElement) {
+      buttonElement.innerHTML = originalContent;
+      buttonElement.disabled = false;
+    }
+  }
+};
+
+const openSingleImageLightbox = (src, caption) => {
+  previousFocus = document.activeElement;
+  lightboxImage.src = src;
+  lightboxImage.alt = caption || "Publication clipping";
+  lightboxCaption.textContent = caption || "";
+  previousLightboxButton.style.display = "none";
+  nextLightboxButton.style.display = "none";
+  lightbox.hidden = false;
+  document.body.classList.add("menu-open");
+  closeLightboxButton.focus();
+};
+
+const restoreLightboxNav = () => {
+  previousLightboxButton.style.display = "";
+  nextLightboxButton.style.display = "";
+};
+
 const closeLightbox = () => {
   lightbox.hidden = true;
   lightboxImage.src = "";
+  restoreLightboxNav();
   document.body.classList.remove("menu-open");
 
   if (previousFocus) {
@@ -155,7 +224,8 @@ const trapLightboxFocus = (event) => {
     closeLightboxButton,
     previousLightboxButton,
     nextLightboxButton,
-  ];
+  ].filter((el) => el.style.display !== "none");
+
   const firstItem = focusableItems[0];
   const lastItem = focusableItems[focusableItems.length - 1];
 
@@ -188,12 +258,12 @@ document.addEventListener("keydown", (event) => {
     }
   }
 
-  if (!lightbox.hidden && event.key === "ArrowLeft") {
+  if (!lightbox.hidden && event.key === "ArrowLeft" && previousLightboxButton.style.display !== "none") {
     event.preventDefault();
     showPreviousImage();
   }
 
-  if (!lightbox.hidden && event.key === "ArrowRight") {
+  if (!lightbox.hidden && event.key === "ArrowRight" && nextLightboxButton.style.display !== "none") {
     event.preventDefault();
     showNextImage();
   }
@@ -203,7 +273,63 @@ revealItems.forEach((item) => revealObserver.observe(item));
 statNumbers.forEach((number) => statObserver.observe(number));
 
 galleryItems.forEach((item, index) => {
-  item.addEventListener("click", () => openLightbox(index));
+  item.addEventListener("click", () => {
+    restoreLightboxNav();
+    openLightbox(index);
+  });
+});
+
+// Publication downloads & previews
+const downloadButtons = document.querySelectorAll(".download-pub-btn");
+downloadButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const url = button.dataset.downloadUrl;
+    const filename = button.dataset.filename;
+    downloadImage(url, filename, button);
+  });
+});
+
+const downloadAllBtn = document.querySelector("#download-all-publications");
+if (downloadAllBtn) {
+  downloadAllBtn.addEventListener("click", async () => {
+    const buttons = Array.from(document.querySelectorAll(".download-pub-btn"));
+    const originalContent = downloadAllBtn.innerHTML;
+
+    downloadAllBtn.disabled = true;
+    downloadAllBtn.innerHTML = `
+      <svg class="spin-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"/></svg>
+      <span>Downloading All...</span>
+    `;
+
+    for (let i = 0; i < buttons.length; i++) {
+      const btn = buttons[i];
+      const url = btn.dataset.downloadUrl;
+      const filename = btn.dataset.filename;
+      await downloadImage(url, filename, null);
+      await new Promise((resolve) => setTimeout(resolve, 400));
+    }
+
+    downloadAllBtn.innerHTML = `
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>All Downloaded!</span>
+    `;
+
+    setTimeout(() => {
+      downloadAllBtn.innerHTML = originalContent;
+      downloadAllBtn.disabled = false;
+    }, 2800);
+  });
+}
+
+const pubPreviewButtons = document.querySelectorAll(
+  ".publication-preview-btn, .publication-card-preview-btn"
+);
+pubPreviewButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const fullSrc = btn.dataset.fullSrc;
+    const caption = btn.dataset.caption;
+    openSingleImageLightbox(fullSrc, caption);
+  });
 });
 
 closeLightboxButton.addEventListener("click", closeLightbox);
