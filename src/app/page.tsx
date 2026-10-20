@@ -11,6 +11,7 @@ import Publications from "@/components/Publications";
 import Outreach from "@/components/Outreach";
 import Shirt from "@/components/Shirt";
 import Involve from "@/components/Involve";
+import Directors from "@/components/Directors";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Lightbox, { LightboxItem } from "@/components/Lightbox";
@@ -88,7 +89,8 @@ export default function Home() {
         <Publications onPreviewImage={handlePreviewPublication} />
         <Outreach />
         <Shirt />
-        <Involve />
+        <Directors />
+      <Involve />
         <Contact />
       </main>
       <Footer />
